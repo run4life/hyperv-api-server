@@ -1,4 +1,4 @@
-from app.handlers.base import *
+from apps.handlers.base import *
 
 
 
