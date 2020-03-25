@@ -18,7 +18,6 @@ class BaseHandler(tornado.web.RequestHandler):
         self.feedback()
 
     def get(self, *args, **kwargs):
-        # self.write_error(404)  # 自定义错误页面
         self.feedback()
 
     def post(self, *args, **kwargs):
