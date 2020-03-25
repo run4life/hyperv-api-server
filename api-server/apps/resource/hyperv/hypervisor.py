@@ -34,15 +34,12 @@ class HypervisorClient(object):
         mem_info = {'TotalVisibleMemorySize': mem_info.TotalVisibleMemorySize,
                     'FreePhysicalMemory': mem_info.FreePhysicalMemory}
         return mem_info
-        
-        
-    
     
     def get_hypervisor_list(self):
         client = self.get_wmi_client("172.30.126.56", "administrator", "passw0rd#!1", r"root\virtualization\v2")
-#        vms_obj = client.query("select Name,ElementName,Status,EnabledState from Msvm_ComputerSystem")
-#        for vm in vms_obj:
-#            print vm
+        vms_obj = client.query("select Name,ElementName,Status,EnabledState from Msvm_ComputerSystem")
+        for vm in vms_obj:
+            print vm
         cpu = self._get_cpu_info(client)
         print cpu
         memory = self._get_memory_info(client)
