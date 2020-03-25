@@ -1,9 +1,4 @@
 import wmi
-from SimpleXMLRPCServer import server
-from MySQLdb.constants.ER import USERNAME
-
-
-
 
 class HypervisorClient(object):
     
