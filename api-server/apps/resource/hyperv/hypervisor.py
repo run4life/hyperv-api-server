@@ -12,7 +12,7 @@ class HypervisorClient(object):
 #            "SELECT Architecture, Name, Manufacturer, MaxClockSpeed, "
 #            "NumberOfCores, NumberOfLogicalProcessors FROM Win32_Processor "
 #            "WHERE ProcessorType = 3")
-        cpus = client.query("SELECT * FROM Win32_Processor")
+        cpus = client.Win32_Processor()
         cpus_list = []
         for cpu in cpus:
             cpu_info = {'Architecture': cpu.Architecture,
