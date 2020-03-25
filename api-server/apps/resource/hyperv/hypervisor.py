@@ -3,9 +3,6 @@ import wmi
 class HypervisorClient(object):
     
     def get_wmi_client(self, server, user, password):
-#        if namespace:
-#            conn = wmi.connect_server(server=server, user=user, password=password, namespace=namespace)
-#        else:
         conn = wmi.connect_server(server=server, user=user, password=password)
         client = wmi.WMI(wmi=conn) 
         return client
@@ -30,9 +27,10 @@ class HypervisorClient(object):
     
     def _get_memory_info(self, client):
 
-        mems = client.query("SELECT TotalVisibleMemorySize, "
-                                          "FreePhysicalMemory "
-                                          "FROM win32_operatingsystem")[0]
+#        mems = client.query("SELECT TotalVisibleMemorySize, "
+#                                          "FreePhysicalMemory "
+#                                          "FROM win32_operatingsystem")[0]
+        mem_info = client.win32_operatingsystem
         mems_list = []
         
         mem_info = {'TotalVisibleMemorySize': mem_info.TotalVisibleMemorySize,
