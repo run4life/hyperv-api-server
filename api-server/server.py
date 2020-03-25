@@ -12,8 +12,12 @@ LOG = logging.getLogger(__name__)
 
 
 def getApplication():
+    app_settings = dict(
+            login_url='/login'
+    )
     application = tornado.web.Application(
-            handlers=url
+            handlers=url,
+            **app_settings
     )
     return application
 
