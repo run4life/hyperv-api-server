@@ -23,6 +23,7 @@ def getApplication():
 
 def main():
     application = getApplication()
+    tornado.options.parse_command_line()
     app = tornado.httpserver.HTTPServer(application)
     app.bind('8080', '127.0.0.1')
     app.start(1)

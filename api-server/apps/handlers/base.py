@@ -13,24 +13,5 @@ class BaseHandler(tornado.web.RequestHandler):
     """
     def __init__(self, application, request, **kwargs):
         super(BaseHandler, self).__init__(application, request, **kwargs)
-
-    def head(self, *args, **kwargs):
-        self.feedback()
-
-    def get(self, *args, **kwargs):
-        self.feedback()
-
-    def post(self, *args, **kwargs):
-        self.feedback()
-
-    def delete(self, *args, **kwargs):
-        self.feedback()
-
-    def patch(self, *args, **kwargs):
-        self.feedback()
-
-    def put(self, *args, **kwargs):
-        self.feedback()
-
-    def options(self, *args, **kwargs):
-        self.feedback()
+        #self.params = ''
+        self.dict_headers = {'Content-Type':'application/json', 'Accept':'application/json'}
