@@ -4,7 +4,6 @@
 import json
 import base64
 import logging
-import requests
 import tornado.web
 import tornado.escape
 
