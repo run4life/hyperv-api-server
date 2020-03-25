@@ -1,3 +1,6 @@
+#
+# -*- coding: utf-8 -*-
+#
 from apps.handlers.base import *
 
 
